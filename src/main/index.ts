@@ -11,6 +11,13 @@ function createWindow(): void {
     show: false,
     autoHideMenuBar: true,
     ...(process.platform === 'linux' ? { icon } : {}),
+		center: true,
+		title: 'MD Notes',
+		frame: false,
+		visualEffectState: 'active',
+		titleBarStyle: 'hidden',
+		trafficLightPosition: { x: 15, y: 10 },
+		...(process.platform === 'win32' ? { backgroundMaterial: 'acrylic' } : {}),
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
       sandbox: true,
